@@ -1,1 +1,40 @@
-<p>task-list works!</p>
+<div class="container">
+    <div class="head">
+        <p class="head__count">Count of Task: {{userTasks.length}}</p>
+        <form class="head-form">
+            <input class="head-form__input" type="text" name="input" #inputAdd [(ngModel)]="inputValue">
+            <button class="head-form__btn" id="add" (click)="addTask(inputAdd)">Add</button>
+        </form>
+    </div>
+    <table class="table">
+        <thead class="table-head">
+            <tr class="table-head__tr">
+                <th class="table-head__th">#</th>
+                <th class="table-head__th">Task</th>
+                <th class="table-head__th">Check</th>
+                <th class="table-head__th">DONE/IN PROGRESS</th>
+                <th class="table-head__th">Edit</th>
+                <th class="table-head__th">Delete</th>
+            </tr>
+        </thead>
+        <tbody class="table-body">
+            <tr *ngFor="let task of userTasks; index as i">
+                <td>{{ i+1 }}</td>
+                <td>{{ task.name }}</td>
+                <td><input type="checkbox" name="checkBox" (change)="changeCheckBox(i)" [checked]=task.check></td>
+                <td [ngStyle]="{color: task.check ? 'green' : 'red' }">{{task.check ? 'Done' : 'In PROGRESS'}}</td>
+                <td><button type="button" class="edit" (click)="editTask(i)">Edit</button></td>
+                <td><button type="button" class="delete" (click)="deleteTask(i)" [disabled]=!task.check>Delete</button></td>
+            </tr>
+            <tr *ngIf="isSave" class="table-body__edit">
+                <td></td>
+                <td></td>
+                <td></td>
+                <td><input type="text" class="edit-input" name="tableInput" #inputEdit [(ngModel)]="tableIptValue"></td>
+                <td><button type="button"  class="edit-btn" (click)="saveTask(inputEdit)">Save</button></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+

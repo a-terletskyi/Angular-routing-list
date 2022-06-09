@@ -1,0 +1,138 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+:focus-visible {
+    outline: none;
+    box-shadow: 0 0 5px 1px #61b3ff;
+}
+
+button:hover {
+    cursor: pointer;
+    filter: brightness(90%) saturate(90%);
+}
+
+.container {
+    min-height: calc(100vh - 155px);
+}
+
+.head {
+    width: 80%;
+    padding: 10px 0;
+    margin: 0 auto;
+
+    &__count {
+        padding: 10px 0;
+        font-size: 26px;
+        font-weight: 700;
+    }
+
+    &-form {
+        text-align: center;
+
+        &__input, &__btn {
+            padding: 8px;
+            font-size: 16px;
+            border: 1px solid #dddddd;
+        }
+
+        &__input {
+            width: 78.3%;
+            margin-right: 10px;
+            color: #7e7e7e;
+        }
+
+        &__btn {
+            width: 20%;
+            color: #ffffff;
+            background-color: #3bad3b;
+        }
+
+        &__btn:active {
+            border-color: #38c545;
+            box-shadow: 0 0 4px 1px #38c545;
+        }
+    }
+}
+
+.table {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    border-collapse: collapse;
+
+    &-head {
+        &__tr {
+            border-top: solid 1px #dddddd;
+            border-bottom: solid 2.5px #dddddd;
+        }
+
+        &__th {
+            padding: 16px 0;
+        }
+    }
+
+    &-body {
+        td {
+            padding: 10px;
+            border-top: solid 1px #dddddd;
+        }
+
+        .edit, .delete {
+            padding: 10px 15px;
+            font-size: 15px;
+            border: solid 1px #dddddd;
+        }
+
+        .edit {
+            background-color: #ffc626;
+        }
+
+        .edit:active {
+            border-color: #ffc626;
+            box-shadow: 0 0 4px 1px #ffc626;
+        }
+
+        .delete {
+            color: #ffffff;
+            background-color: #d53d3d;
+        }
+
+        .delete:active {
+            border-color: #d53d3d;
+            box-shadow: 0 0 4px 1px #d53d3d;
+        }
+
+        .delete:disabled {
+            background-color: #ff9b9b;
+            border-color: #ff9b9b;
+            box-shadow: none;
+        }
+
+        &__edit {
+            .edit-input {
+                padding: 8px;
+                color: #7e7e7e;
+                font-size: 16px;
+                border: 1px solid #dddddd;
+            }
+
+            .edit-btn {
+                padding: 10px 15px;
+                color: #ffffff;
+                background-color: #3bad3b;
+                font-size: 15px;
+                border: solid 1px #dddddd;
+            }
+
+            .edit-btn:active {
+                border-color: #38c545;
+                box-shadow: 0 0 4px 1px #38c545;
+            }
+        }
+    }
+}

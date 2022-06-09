@@ -1,1 +1,10 @@
-<p>works works!</p>
+<nav>
+    <ul class="last-works"><span class="last-works__title">Last works >>></span>
+        <li class="last-works__item"><a [routerLink]="[ '/works/cenzor' ]" routerLinkActive="active">Cenzor</a></li>
+        <li class="last-works__item"><a [routerLink]="[ '/works/userlist' ]" routerLinkActive="active">Users</a></li>
+        <li class="last-works__item"><a [routerLink]="[ '/works/tasklist' ]" routerLinkActive="active">Task</a></li>
+    </ul>
+    <a class="home__link" [routerLink]="[ '/home']">Back to&nbsp;>>>&nbsp;Home</a>
+</nav>
+
+<router-outlet></router-outlet>
